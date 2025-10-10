@@ -14,6 +14,12 @@ import { useState } from "react"
 function CartContent() {
   const { cart, removeFromCart, updateQuantity, totalPrice } = useCart()
   const [showWhatsAppModal, setShowWhatsAppModal] = useState(false)
+  const [deliveryMethod, setDeliveryMethod] = useState<"delivery" | "pickup">("delivery")
+
+  const SHIPPING_COST = 500 // 💰 Definí el costo de envío acá
+  const shippingCost = deliveryMethod === "delivery" ? SHIPPING_COST : 0
+  const totalWithShipping = totalPrice + shippingCost
+
 
   if (cart.length === 0) {
     return (
@@ -113,10 +119,51 @@ function CartContent() {
                     ))}
                   </div>
 
+                  <div className="border-t pt-4 space-y-3">
+                    <p className="font-semibold text-sm">Método de entrega:</p>
+                    <div className="space-y-2">
+                      <button
+                        onClick={() => setDeliveryMethod("delivery")}
+                        className={`w-full p-3 rounded-lg border-2 text-left transition-colors ${
+                          deliveryMethod === "delivery"
+                            ? "border-primary bg-primary/5"
+                            : "border-border hover:border-primary/50"
+                        }`}
+                      >
+                        <p className="font-medium">Envío a domicilio</p>
+                        <p className="text-xs text-muted-foreground">Solo Santa Fe Capital - $500</p>
+                      </button>
+                      <button
+                        onClick={() => setDeliveryMethod("pickup")}
+                        className={`w-full p-3 rounded-lg border-2 text-left transition-colors ${
+                          deliveryMethod === "pickup"
+                            ? "border-primary bg-primary/5"
+                            : "border-border hover:border-primary/50"
+                        }`}
+                      >
+                        <p className="font-medium">Retiro en domicilio</p>
+                        <p className="text-xs text-muted-foreground">Sin cargo</p>
+                      </button>
+                    </div>
+                  </div>
+
+                  <div className="border-t pt-4 space-y-3">
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">Subtotal</span>
+                      <span className="font-medium">${totalPrice}</span>
+                    </div>
+                    <div className="flex justify-between text-sm">
+                      <span className="text-muted-foreground">
+                        {deliveryMethod === "delivery" ? "Envío" : "Retiro"}
+                      </span>
+                      <span className="font-medium">${shippingCost}</span>
+                    </div>
+                  </div>
+
                   <div className="border-t pt-4">
                     <div className="flex justify-between items-center mb-6">
                       <span className="text-lg font-semibold">Total</span>
-                      <span className="text-3xl font-bold text-primary">${totalPrice}</span>
+                      <span className="text-3xl font-bold text-primary">${totalWithShipping}</span>
                     </div>
 
                     <Button size="lg" className="w-full text-lg" onClick={() => setShowWhatsAppModal(true)}>
@@ -140,7 +187,12 @@ function CartContent() {
       </main>
 
       <Footer />
-      <WhatsAppModal open={showWhatsAppModal} onOpenChange={setShowWhatsAppModal} />
+      <WhatsAppModal
+        open={showWhatsAppModal}
+        onOpenChange={setShowWhatsAppModal}
+        shippingCost={shippingCost}
+        deliveryMethod={deliveryMethod}
+      />
     </div>
   )
 }
