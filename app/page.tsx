@@ -134,6 +134,56 @@ export default function HomePage() {
             </div>
           </section>
 
+           {/* About Us Section */}
+          <section className="py-20 bg-primary/5">
+            <div className="container mx-auto px-4">
+              <div className="max-w-4xl mx-auto">
+                <div className="text-center mb-12">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">Sobre Nosotros</h2>
+                  <div className="w-20 h-1 bg-accent mx-auto mb-6" />
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-12 items-center">
+                  <div className="space-y-6">
+                    <p className="text-lg leading-relaxed text-muted-foreground">
+                      En <span className="font-semibold text-foreground">La Pacha</span>, creemos que la alimentación
+                      consciente es el camino hacia un futuro más saludable y sustentable. Elaboramos productos
+                      vegetales y naturales con ingredientes de la más alta calidad.
+                    </p>
+                    <p className="text-lg leading-relaxed text-muted-foreground">
+                      Cada hamburguesa, snack y producto artesanal está hecho con amor y dedicación, respetando el medio
+                      ambiente y tu bienestar. Nuestra misión es hacer que comer sano sea delicioso, accesible y
+                      amigable con el planeta.
+                    </p>
+                    <div className="flex flex-wrap gap-4 pt-4">
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-accent" />
+                        <span className="text-sm font-medium">100% Vegetal</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-accent" />
+                        <span className="text-sm font-medium">Sin Conservantes</span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <div className="h-2 w-2 rounded-full bg-accent" />
+                        <span className="text-sm font-medium">Producción Local</span>
+                      </div>
+                    </div>
+                  </div>                
+
+                  <div className="relative aspect-square rounded-2xl overflow-hidden shadow-2xl">
+                    <Image
+                      src="\Imagen de WhatsApp 2025-10-10 a las 18.30.01_a3f68813.jpg"
+                      alt="La Pacha - Preparación artesanal"
+                      fill
+                      className="object-cover"
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
           {/* Featured Products */}
           <section className="py-20 bg-muted/30">
             <div className="container mx-auto px-4">
