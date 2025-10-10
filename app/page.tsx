@@ -28,10 +28,10 @@ export default function HomePage() {
                 src="/fresh-organic-vegetables-and-healthy-food-ingredie.jpg"
                 alt="Healthy food background"
                 fill
-                className="object-cover blur-sm opacity-30"
+                className="object-cover blur-[2px] opacity-40"
                 priority
               />
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-background/80 to-primary/20" />
+                 <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-background/60 to-primary/20" />
             </div>
 
             <div className="container mx-auto px-4 relative z-10">
