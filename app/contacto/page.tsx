@@ -68,7 +68,7 @@ export default function ContactoPage() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Ubicación</h3>
-                      <p className="text-muted-foreground">Rosario, Santa Fe, Argentina</p>
+                      <p className="text-muted-foreground"> Santa Fe, Argentina</p>
                     </div>
                   </div>
                 </CardContent>
@@ -105,9 +105,10 @@ export default function ContactoPage() {
                       <div>
                         <p className="font-medium mb-1">¿Hacen envíos?</p>
                         <p className="text-muted-foreground leading-relaxed">
-                          Sí, hacemos envíos en Rosario y alrededores. Consultá el costo al hacer tu pedido.
+                          Sí, hacemos envíos en Santa Fe capital. Consultá el costo al hacer tu pedido.
                         </p>
                       </div>
+                      
                       <div>
                         <p className="font-medium mb-1">¿Cuál es el pedido mínimo?</p>
                         <p className="text-muted-foreground leading-relaxed">
